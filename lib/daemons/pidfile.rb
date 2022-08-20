@@ -72,13 +72,13 @@ module Daemons
       @number = 0 if multiple
 
       if multiple
-        while File.exist?(filename) && @number < 1024
+        while File.exist?(filename)
           @number += 1
         end
 
-        if @number >= 1024
-          fail RuntimeException('cannot run more than 1024 instances of the application')
-        end
+        # if @number >= 1024
+        #   fail RuntimeException('cannot run more than 1024 instances of the application')
+        # end
       end
     end
 
